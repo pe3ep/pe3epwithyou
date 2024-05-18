@@ -121,7 +121,7 @@ export default function Home() {
         </div>
         <div className="flex justify-center mt-28 p-5">
           <p className={`text-yellow-700/50 italic ${font.className}`}>
-            "Sometimes the simplest answer is the best one"
+            {`\"Sometimes the simplest answer is the best one\"`}
           </p>
         </div>
       </main>
