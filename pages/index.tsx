@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Fireworks from 'react-canvas-confetti/dist/presets/fireworks'
+import Head from 'next/head'
 export default function Home() {
   const socials = [
     {
@@ -70,39 +71,44 @@ export default function Home() {
   ]
   const [isVisible, setVisible] = useState(false)
   return (
-    <div className="flex flex-col justify-center gap-8 items-center h-screen max-w-xl mx-auto">
-      {isVisible && (
-        <>
-          <div className="absolute top-6 animate-pulse">
-            Click on the logo again to disable fireworks
-          </div>
-          <Fireworks
-            autorun={{ speed: 3 }}
-            globalOptions={{ disableForReducedMotion: true }}
-          />
-        </>
-      )}
+    <>
+      <Head>
+        <title>pe3epwithyou</title>
+      </Head>
+      <main className="flex flex-col justify-center gap-8 items-center h-screen max-w-xl mx-auto">
+        {isVisible && (
+          <>
+            <div className="absolute top-6 animate-pulse">
+              Click on the logo again to disable fireworks
+            </div>
+            <Fireworks
+              autorun={{ speed: 3 }}
+              globalOptions={{ disableForReducedMotion: true }}
+            />
+          </>
+        )}
 
-      <img
-        onClick={() => setVisible(!isVisible)}
-        src="/svg/logo.svg"
-        className="transition active:scale-90"
-        alt="pe3epwithyou logo"
-        width={500}
-        height={321}
-      />
+        <img
+          onClick={() => setVisible(!isVisible)}
+          src="/svg/logo.svg"
+          className="transition active:scale-90"
+          alt="pe3epwithyou logo"
+          width={500}
+          height={321}
+        />
 
-      <div className="flex gap-2">
-        {socials.map((item, index) => (
-          <a
-            href={item.link}
-            key={item.id}
-            className={`transition-colors duration-50 hover:text-black hover:fill-black hover:bg-slate-50 focus:text-black focus:fill-black outline-slate-50 outline-offset-4  focus:bg-slate-50 text-white fill-white flex items-center gap-3 p-4 bg-black/10 rounded-lg`}>
-            {item.icon}
-            {item.name}
-          </a>
-        ))}
-      </div>
-    </div>
+        <div className="flex gap-2">
+          {socials.map((item, index) => (
+            <a
+              href={item.link}
+              key={item.id}
+              className={`transition-colors duration-50 hover:text-black hover:fill-black hover:bg-slate-50 focus:text-black focus:fill-black outline-slate-50 outline-offset-4  focus:bg-slate-50 text-white fill-white flex items-center gap-3 p-4 bg-black/10 rounded-lg`}>
+              {item.icon}
+              {item.name}
+            </a>
+          ))}
+        </div>
+      </main>
+    </>
   )
 }
