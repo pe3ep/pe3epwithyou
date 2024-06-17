@@ -4,7 +4,6 @@ import Head from 'next/head'
 export default function Home() {
   const socials = [
     {
-      id: 1,
       name: 'github',
       icon: (
         <svg
@@ -17,7 +16,6 @@ export default function Home() {
       link: 'https://github.com/pe3ep',
     },
     {
-      id: 2,
       name: 'twitch',
       icon: (
         <svg
@@ -30,7 +28,6 @@ export default function Home() {
       link: 'https://twitch.tv/pe3epwithyou',
     },
     {
-      id: 3,
       name: 'discord',
       icon: (
         <svg
@@ -43,7 +40,6 @@ export default function Home() {
       link: 'https://discord.gg/EDvz4zs3g2',
     },
     {
-      id: 4,
       name: 'twitter',
       icon: (
         <svg
@@ -56,7 +52,6 @@ export default function Home() {
       link: 'https://twitter.com/pe3epwithyou',
     },
     {
-      id: 5,
       name: 'telegram',
       icon: (
         <svg
@@ -78,9 +73,9 @@ export default function Home() {
       <main className="flex flex-col justify-center gap-8 items-center h-screen max-w-xl mx-auto">
         {isVisible && (
           <>
-            <div className="absolute top-6 animate-pulse">
+            <p className="absolute top-6 animate-pulse text-white/30">
               Click on the logo again to disable fireworks
-            </div>
+            </p>
             <Fireworks
               autorun={{ speed: 3 }}
               globalOptions={{ disableForReducedMotion: true }}
@@ -91,18 +86,20 @@ export default function Home() {
         <img
           onClick={() => setVisible(!isVisible)}
           src="/svg/logo.svg"
-          className="transition w-96 sm:w-[500px] active:scale-90"
+          className={`transition p-4 w-96 sm:w-[500px] active:scale-[0.8] ${
+            isVisible && `opacity-70 scale-90`
+          }`}
           alt="pe3epwithyou logo"
           width={300}
           height={321}
         />
 
-        <div className="flex flex-col md:flex-row w-full md:w-auto px-8 gap-2">
+        <div className="flex flex-col md:flex-row w-full md:w-auto px-4 gap-2">
           {socials.map((item, index) => (
             <a
               href={item.link}
-              key={item.id}
-              className={`transition-colors duration-50 hover:text-black hover:fill-black hover:bg-slate-50 focus:text-black focus:fill-black outline-slate-50 outline-offset-4  focus:bg-slate-50 text-white fill-white flex items-center gap-3 p-4 bg-black/10 rounded-lg`}>
+              key={index}
+              className={`transition duration-75 hover:fill-slate-900 hover:text-slate-900 hover:bg-slate-50 focus:text-black focus:fill-slate-900 outline-slate-50 outline-offset-4  focus:bg-slate-50 text-white fill-white flex items-center gap-3 p-4 bg-black/10 rounded-lg`}>
               {item.icon}
               {item.name}
             </a>
