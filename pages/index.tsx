@@ -91,13 +91,13 @@ export default function Home() {
         <img
           onClick={() => setVisible(!isVisible)}
           src="/svg/logo.svg"
-          className="transition active:scale-90"
+          className="transition w-96 sm:w-[500px] active:scale-90"
           alt="pe3epwithyou logo"
-          width={500}
+          width={300}
           height={321}
         />
 
-        <div className="flex gap-2">
+        <div className="flex flex-col md:flex-row w-full md:w-auto px-8 gap-2">
           {socials.map((item, index) => (
             <a
               href={item.link}
