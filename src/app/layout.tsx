@@ -42,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${publicSans.variable} ${neuton.variable} ${geistMono.variable} antialiased font-sans`}>
+        className={`${inter.variable} ${publicSans.variable} ${neuton.variable} ${geistMono.variable} antialiased font-sans selection:bg-brand/20`}>
         {children}
       </body>
     </html>

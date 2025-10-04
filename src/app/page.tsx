@@ -60,7 +60,7 @@ export default function Home() {
         </div>
       </header>
       <main className="relative z-20">
-        <div className="w-full h-64 grid place-content-center gap-8">
+        <div className="w-full p-4 py-16 grid place-content-center gap-8">
           <div className="grid place-content-center">
             <h2 className="scroll-m-20 text-brand text-center text-3xl font-fancy italic tracking-tighter">
               Hi, my name is
