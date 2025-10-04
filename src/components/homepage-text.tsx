@@ -34,7 +34,7 @@ export default function HomepageText() {
           developer
           <ArrowUpRight className="h-4 w-4" />
         </InlineLink>
-        , designer and a{' '}
+        , designer, and a{' '}
         <InlineLink
           href="#"
           cards={[
@@ -59,8 +59,8 @@ export default function HomepageText() {
           ]}>
           university student
         </InlineLink>
-        . I've been coding ever since I was 11 years old. In my free time I
-        enjoy to self-improve and work on my passion projects.
+        . I've been coding ever since I was 11 years old. In my free time, I
+        enjoy self-improvement and working on my passion projects.
       </span>
     </span>
   )

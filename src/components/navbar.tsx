@@ -1,12 +1,11 @@
-import React from 'react'
+import { ArrowRight } from 'lucide-react'
+import LogoWithHover from './logo-with-hover'
 import { GitHub } from './logos/github'
-import { Twitter } from './logos/twitter'
 import { Instagram } from './logos/instagram'
 import { Twitch } from './logos/twitch'
-import LogoWithHover from './logo-with-hover'
-import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip'
+import { Twitter } from './logos/twitter'
 import { Button } from './ui/button'
-import { ArrowRight } from 'lucide-react'
+import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip'
 
 const links = [
   {

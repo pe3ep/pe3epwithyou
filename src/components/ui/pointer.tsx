@@ -1,14 +1,12 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
 import {
   AnimatePresence,
   HTMLMotionProps,
   motion,
   useMotionValue,
 } from 'motion/react'
-
-import { cn } from '@/lib/utils'
+import { useEffect, useRef, useState } from 'react'
 
 /**
  * A custom pointer component that displays an animated cursor.

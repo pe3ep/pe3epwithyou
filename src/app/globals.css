@@ -46,7 +46,7 @@
   --radius-xl: calc(var(--radius) + 4px);
 
   --color-brand: var(--brand);
-  --animate-delayed-in: delayedFadeIn 2s linear;
+  --animate-delayed-in: delayedFadeIn 1.2s linear;
 }
 
 :root {
@@ -91,7 +91,7 @@
   0% {
     opacity: 0;
   }
-  66% {
+  50% {
     opacity: 0;
   }
   100% {

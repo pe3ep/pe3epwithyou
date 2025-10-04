@@ -20,7 +20,7 @@ export default function Home() {
               variants={delayedVariant(0.2)}
               initial="hidden"
               animate="visible"
-              className="scroll-m-20 text-brand text-center text-6xl font-semibold font-sans-heading tracking-tight text-balance">
+              className="scroll-m-20 text-brand text-center text-6xl font-semibold font-sans-heading tracking-tighter text-balance">
               Andrew
             </motion.h1>
           </div>
