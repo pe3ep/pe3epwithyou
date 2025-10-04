@@ -10,7 +10,7 @@ export default function NavbarDock() {
 
   return (
     <div className="relative flex gap-2 items-center">
-      <motion.button
+      {/* <motion.button
         onHoverStart={() =>
           setCard(
             <FloatingCards
@@ -71,7 +71,7 @@ export default function NavbarDock() {
       </motion.button>
       <Pointer>
         <AnimatePresence mode="wait">{card}</AnimatePresence>
-      </Pointer>
+      </Pointer> */}
     </div>
   )
 }

@@ -97,7 +97,7 @@ export function Pointer({
               opacity: 0,
               transition: {
                 ease: 'easeIn',
-                duration: 0.15,
+                duration: 0.3,
               },
               filter: 'blur(16px)',
             }}
