@@ -27,7 +27,9 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { delay: 0.6 } }}
-            className="grid place-items-center max-w-xl gap-4">
+            className="relative grid place-items-center max-w-xl gap-4">
+            <div className="absolute -inset-3 bg-background blur-xl" />
+            <div className="absolute inset-0 bg-background blur-xl" />
             <HomepageText />
           </motion.div>
         </div>

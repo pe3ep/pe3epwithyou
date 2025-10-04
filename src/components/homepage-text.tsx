@@ -6,7 +6,7 @@ import { Pointer } from './ui/pointer'
 
 export default function HomepageText() {
   return (
-    <span className="text-center leading-5">
+    <span className="relative text-center leading-5">
       <span className="leading-5 [&:not(:first-child)]:mt-6 inline-block">
         I am a{' '}
         <InlineLink
