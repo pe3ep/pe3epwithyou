@@ -47,17 +47,17 @@ export default function Home() {
             bounce: 0,
           },
         }}
-        className="fixed z-1 w-full bottom-0 translate-y-[50%] left-0 right-0 flex justify-center">
+        className="fixed z-1 w-full bottom-0 -translate-y-8 sm:translate-y-[50%] left-0 right-0 flex justify-center">
         <Globe />
       </motion.footer>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { delay: 2 } }}
-        className="fixed z-2 bottom-0 w-full flex justify-center items-center p-3">
-        <div className="relative">
+        className="fixed z-2 bottom-0 left-0 right-0 w-full flex justify-center items-center p-3">
+        <div className="relative flex justify-center items-center">
           <div className="absolute -inset-3 bg-background blur-xl" />
           <div className="absolute inset-0 bg-background blur-xl" />
-          <p className="relative text-brand">© 2025 Pe3epWithYou</p>
+          <p className="relative text-brand text-center">© 2025 Pe3epWithYou</p>
         </div>
       </motion.div>
     </div>
