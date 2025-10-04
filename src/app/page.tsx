@@ -77,6 +77,12 @@ export default function Home() {
       <footer className="absolute z-1 w-full bottom-0 translate-y-[50%] left-0 right-0 flex justify-center">
         <Globe />
       </footer>
+      <div className="absolute z-2 bottom-0 w-full flex justify-center items-center p-3">
+        <div className="relative">
+          <div className="absolute -inset-3 bg-background blur-xl" />
+          <p className="relative text-brand">© 2025 Pe3epWithYou</p>
+        </div>
+      </div>
     </div>
   )
 }
