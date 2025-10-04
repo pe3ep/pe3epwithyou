@@ -7,7 +7,7 @@ type FloatingCardsProps = {
   stagger?: number
 }
 
-type FloatingCard = {
+export type FloatingCard = {
   img: string
   alt: string
   width: number

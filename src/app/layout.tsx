@@ -20,6 +20,7 @@ const publicSans = Public_Sans({
 const neuton = Neuton({
   variable: '--font-neuton',
   weight: ['200', '300', '400', '700', '800'],
+  style: 'italic',
   subsets: ['latin'],
 })
 

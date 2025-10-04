@@ -1,3 +1,4 @@
+import HomepageText from '@/components/homepage-text'
 import LogoWithHover from '@/components/logo-with-hover'
 import { GitHub } from '@/components/logos/github'
 import { Instagram } from '@/components/logos/instagram'
@@ -37,10 +38,9 @@ export default function Home() {
   ]
 
   return (
-    <main className="p-4 h-screen relative overflow-hidden">
-      <div className="bg-brand text-background p-3 rounded-2xl">
+    <div className="p-4 h-screen relative overflow-hidden">
+      <header className="relative z-30 bg-brand text-background p-3 rounded-2xl">
         <div className="relative w-full flex justify-between items-center">
-          {/* <NavbarDock /> */}
           <LogoWithHover />
           <div className="flex items-center gap-1">
             {links.map((item, index) => (
@@ -58,10 +58,25 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </div>
-      <div className="absolute w-full bottom-0 translate-y-[50%] left-0 right-0 flex justify-center">
+      </header>
+      <main className="relative z-20">
+        <div className="w-full h-64 grid place-content-center gap-8">
+          <div className="grid place-content-center">
+            <h2 className="scroll-m-20 text-brand text-center text-3xl font-fancy italic tracking-tighter">
+              Hi, my name is
+            </h2>
+            <h1 className="scroll-m-20 text-brand text-center text-6xl font-semibold font-sans-heading tracking-tight text-balance">
+              Andrew
+            </h1>
+          </div>
+          <div className="grid place-items-center max-w-xl gap-4">
+            <HomepageText />
+          </div>
+        </div>
+      </main>
+      <footer className="absolute z-1 w-full bottom-0 translate-y-[50%] left-0 right-0 flex justify-center">
         <Globe />
-      </div>
-    </main>
+      </footer>
+    </div>
   )
 }
