@@ -46,6 +46,7 @@
   --radius-xl: calc(var(--radius) + 4px);
 
   --color-brand: var(--brand);
+  --animate-delayed-in: delayedFadeIn 2.5s linear;
 }
 
 :root {
@@ -84,6 +85,18 @@
   --sidebar-ring: oklch(0.708 0 0);
 
   --brand: oklch(40.15% 0.11693 23.381);
+}
+
+@keyframes delayedFadeIn {
+  0% {
+    opacity: 0;
+  }
+  66% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @layer base {

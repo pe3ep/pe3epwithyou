@@ -6,7 +6,7 @@ import { Pointer } from './ui/pointer'
 
 export default function HomepageText() {
   return (
-    <span className="relative text-center leading-5">
+    <span className="relative z-3 text-center leading-5">
       <span className="leading-5 [&:not(:first-child)]:mt-6 inline-block">
         I am a{' '}
         <InlineLink
@@ -76,7 +76,7 @@ const InlineLink = ({
   cards: FloatingCard[]
 }) => {
   return (
-    <span className="relative inline-block">
+    <span className="relative z-3 inline-block">
       <Link
         href={href}
         className="text-brand font-medium inline-flex items-center gap-0.5">

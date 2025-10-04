@@ -8,7 +8,7 @@ export default function Home() {
     <div className="p-4 pt-20 h-screen relative overflow-hidden">
       <main className="relative z-20">
         <div className="w-full p-4 py-16 grid place-content-center gap-8">
-          <div className="grid place-content-center">
+          <div className="z-3 grid place-content-center">
             <motion.h2
               variants={delayedVariant()}
               initial="hidden"
@@ -24,14 +24,11 @@ export default function Home() {
               Andrew
             </motion.h1>
           </div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1, transition: { delay: 0.6 } }}
-            className="relative grid place-items-center max-w-xl gap-4">
-            <div className="absolute -inset-3 bg-background blur-xl" />
-            <div className="absolute inset-0 bg-background blur-xl" />
+          <div className="relative grid place-items-center max-w-xl gap-4 animate-delayed-in">
+            <div className="absolute z-2 -inset-3 bg-background blur-xl" />
+            <div className="absolute z-2 inset-0 bg-background blur-xl" />
             <HomepageText />
-          </motion.div>
+          </div>
         </div>
       </main>
       <motion.footer
