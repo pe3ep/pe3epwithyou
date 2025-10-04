@@ -1,10 +1,11 @@
 'use client'
+import Link from 'next/link'
 import FloatingCards from './floating-cards'
 import { Pointer } from './ui/pointer'
 
 export default function LogoWithHover() {
   return (
-    <div className="relative">
+    <Link className="relative" href="/">
       <img src="/pe3epwithyou.svg" alt="pe3epwithyou" className="h-10" />
       <Pointer>
         <FloatingCards
@@ -26,6 +27,6 @@ export default function LogoWithHover() {
           ]}
         />
       </Pointer>
-    </div>
+    </Link>
   )
 }

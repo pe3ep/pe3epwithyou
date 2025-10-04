@@ -1,88 +1,86 @@
+'use client'
 import HomepageText from '@/components/homepage-text'
-import LogoWithHover from '@/components/logo-with-hover'
-import { GitHub } from '@/components/logos/github'
-import { Instagram } from '@/components/logos/instagram'
-import { Twitch } from '@/components/logos/twitch'
-import { Twitter } from '@/components/logos/twitter'
-import { Button } from '@/components/ui/button'
 import { Globe } from '@/components/ui/globe'
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from '@/components/ui/tooltip'
-import { ArrowRight } from 'lucide-react'
+import { motion, Variants } from 'motion/react'
 
 export default function Home() {
-  const links = [
-    {
-      url: 'https://github.com/pe3ep',
-      name: 'Github',
-      icon: <GitHub className="size-5" />,
-    },
-    {
-      url: 'https://x.com/pe3epwithyou',
-      name: 'Twitter',
-      icon: <Twitter className="size-5" />,
-    },
-    {
-      url: 'https://www.instagram.com/pe3epwithyou/',
-      name: 'Instagram',
-      icon: <Instagram className="size-5" />,
-    },
-    {
-      url: 'https://twitch.tv/pe3epwithyou',
-      name: 'Twitch',
-      icon: <Twitch className="size-5" />,
-    },
-  ]
-
   return (
-    <div className="p-4 h-screen relative overflow-hidden">
-      <header className="relative z-30 bg-brand text-background p-3 rounded-2xl">
-        <div className="relative w-full flex justify-between items-center">
-          <LogoWithHover />
-          <div className="flex items-center gap-1">
-            {links.map((item, index) => (
-              <Tooltip key={index}>
-                <TooltipTrigger asChild>
-                  <Button variant={'secondary'} size={'icon-lg'} asChild>
-                    <a href={item.url}>{item.icon}</a>
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent className="flex items-center gap-1 pr-2.5">
-                  <p>{item.name}</p>
-                  <ArrowRight className="h-3 w-3" />
-                </TooltipContent>
-              </Tooltip>
-            ))}
-          </div>
-        </div>
-      </header>
+    <div className="p-4 pt-20 h-screen relative overflow-hidden">
       <main className="relative z-20">
         <div className="w-full p-4 py-16 grid place-content-center gap-8">
           <div className="grid place-content-center">
-            <h2 className="scroll-m-20 text-brand text-center text-3xl font-fancy italic tracking-tighter">
+            <motion.h2
+              variants={delayedVariant()}
+              initial="hidden"
+              animate="visible"
+              className="scroll-m-20 text-brand text-center text-3xl font-fancy italic tracking-tighter">
               Hi, my name is
-            </h2>
-            <h1 className="scroll-m-20 text-brand text-center text-6xl font-semibold font-sans-heading tracking-tight text-balance">
+            </motion.h2>
+            <motion.h1
+              variants={delayedVariant(0.2)}
+              initial="hidden"
+              animate="visible"
+              className="scroll-m-20 text-brand text-center text-6xl font-semibold font-sans-heading tracking-tight text-balance">
               Andrew
-            </h1>
+            </motion.h1>
           </div>
-          <div className="grid place-items-center max-w-xl gap-4">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { delay: 0.6 } }}
+            className="grid place-items-center max-w-xl gap-4">
             <HomepageText />
-          </div>
+          </motion.div>
         </div>
       </main>
-      <footer className="absolute z-1 w-full bottom-0 translate-y-[50%] left-0 right-0 flex justify-center">
+      <motion.footer
+        initial={{
+          opacity: 0,
+          y: 50,
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+          transition: {
+            delay: 0.8,
+            type: 'spring',
+            visualDuration: 1.25,
+            bounce: 0,
+          },
+        }}
+        className="absolute z-1 w-full bottom-0 translate-y-[50%] left-0 right-0 flex justify-center">
         <Globe />
-      </footer>
-      <div className="absolute z-2 bottom-0 w-full flex justify-center items-center p-3">
+      </motion.footer>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, transition: { delay: 2 } }}
+        className="absolute z-2 bottom-0 w-full flex justify-center items-center p-3">
         <div className="relative">
           <div className="absolute -inset-3 bg-background blur-xl" />
+          <div className="absolute inset-0 bg-background blur-xl" />
           <p className="relative text-brand">© 2025 Pe3epWithYou</p>
         </div>
-      </div>
+      </motion.div>
     </div>
   )
+}
+
+function delayedVariant(delay: number = 0): Variants {
+  return {
+    hidden: {
+      opacity: 0,
+      filter: 'blur(3px)',
+      y: -20,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      filter: 'blur(0px)',
+      transition: {
+        delay: delay,
+        type: 'spring',
+        visualDuration: 0.4,
+        bounce: 0.5,
+      },
+    },
+  }
 }

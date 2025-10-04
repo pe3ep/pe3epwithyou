@@ -10,7 +10,7 @@ export default function HomepageText() {
       <span className="leading-5 [&:not(:first-child)]:mt-6 inline-block">
         I am a{' '}
         <InlineLink
-          href="/"
+          href="/projects"
           cards={[
             {
               img: '/images/biomebattle.png',
