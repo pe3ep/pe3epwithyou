@@ -1,20 +1,14 @@
-import ProjectComponent from '@/components/project'
-import { ArchiveX, ArrowLeft, Folder } from 'lucide-react'
-import { Metadata } from 'next'
-import Link from 'next/link'
+'use client'
 import {
   Empty,
-  EmptyContent,
   EmptyDescription,
   EmptyHeader,
   EmptyMedia,
   EmptyTitle,
 } from '@/components/ui/empty'
-import { Button } from '@/components/ui/button'
-export const metadata: Metadata = {
-  title: 'Projects',
-  description: "Projects that I've worked on",
-}
+import { ArchiveX, ArrowLeft } from 'lucide-react'
+import Link from 'next/link'
+import useSWR from 'swr'
 
 export type ProjectData = {
   name: string
@@ -79,10 +73,13 @@ export default function ProjectsPage() {
   )
 }
 
-const Projects = async () => {
-  const data = await fetch(
-    'https://uselessfacts.jsph.pl/api/v2/facts/random?language=en'
-  ).then((res) => res.json())
+const fetcher = (url: string) => fetch(url).then((res) => res.json())
+
+const Projects = () => {
+  const { data, error, isLoading } = useSWR(
+    'https://uselessfacts.jsph.pl/api/v2/facts/random?language=en',
+    fetcher
+  )
   return (
     // <div className="grid gap-2">
     //   {projects.map((project, index) => (
@@ -99,7 +96,11 @@ const Projects = async () => {
         This page is being worked on
       </EmptyTitle>
       <EmptyDescription className="text-primary/85 leading-5">
-        Random fact: {data?.text ?? 'Useless fact'}
+        {isLoading ? (
+          'Loading...'
+        ) : (
+          <span>Random fact: {data?.text ?? 'Useless fact'}</span>
+        )}
       </EmptyDescription>
     </Empty>
   )
