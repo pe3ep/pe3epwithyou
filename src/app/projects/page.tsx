@@ -13,8 +13,13 @@ import useSWR from 'swr'
 export type ProjectData = {
   name: string
   description: string
-  url: string
-  logoURL: string
+  icon_small: string
+  icon: string
+  link: string
+  screenshots?: {
+    src: string
+    caption: string
+  }[]
 }
 
 export const projects: ProjectData[] = [
@@ -22,29 +27,29 @@ export const projects: ProjectData[] = [
     name: 'Trident',
     description:
       'A Minecraft mod made for MCC Island that shows multitude of useful information on-screen and has many QoL improvements',
-    url: 'https://modrinth.com/mod/trident-mcci',
-    logoURL: '/images/trident.png',
+    icon: '/images/trident.png',
+    icon_small: '/images/trident.png',
+    link: 'https://modrinth.com/project/trident-mcci/',
+    screenshots: [
+      {
+        src: '/images/debug.jpg',
+        caption: 'Debug image',
+      },
+    ],
   },
   {
-    name: 'Trident',
+    name: 'MCCI Hub',
     description:
-      'A Minecraft mod made for MCC Island that shows multitude of useful information on-screen and has many QoL improvements',
-    url: 'https://modrinth.com/mod/trident-mcci',
-    logoURL: '/images/car.jpg',
-  },
-  {
-    name: 'Trident',
-    description:
-      'A Minecraft mod made for MCC Island that shows multitude of useful information on-screen and has many QoL improvements',
-    url: 'https://modrinth.com/mod/trident-mcci',
-    logoURL: '/images/biomebattle.png',
-  },
-  {
-    name: 'Trident',
-    description:
-      'A Minecraft mod made for MCC Island that shows multitude of useful information on-screen and has many QoL improvements',
-    url: 'https://modrinth.com/mod/trident-mcci',
-    logoURL: '/images/mountains.jpg',
+      'A website made for MCC Island that allows players to view their stats, see the best players in the world, activity of their friends, and much more.',
+    icon: '/images/trident.png',
+    icon_small: '/images/trident.png',
+    link: 'https://mccihub.net/',
+    screenshots: [
+      {
+        src: '/images/debug.jpg',
+        caption: 'Debug image',
+      },
+    ],
   },
 ]
 
@@ -66,7 +71,7 @@ export default function ProjectsPage() {
             This is a list of project's that I've worked on over the past years.
             This page may include projects that are still being worked on
           </p>
-          <Projects />
+          <EmptyProjects />
         </div>
       </div>
     </div>
@@ -75,17 +80,12 @@ export default function ProjectsPage() {
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
-const Projects = () => {
+const EmptyProjects = () => {
   const { data, error, isLoading } = useSWR(
     'https://uselessfacts.jsph.pl/api/v2/facts/random?language=en',
     fetcher
   )
   return (
-    // <div className="grid gap-2">
-    //   {projects.map((project, index) => (
-    //     <ProjectComponent key={index} project={project} />
-    //   ))}
-    // </div>
     <Empty className="border rounded-2xl border-dashed border-brand">
       <EmptyHeader>
         <EmptyMedia variant="icon">
