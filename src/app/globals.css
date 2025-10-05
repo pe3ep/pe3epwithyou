@@ -6,6 +6,7 @@
 @theme inline {
   /* Shadcn defaults */
   --color-background: var(--background);
+  --color-background-muted: var(--background-muted);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
   --font-sans-heading: var(--font-public-sans);
@@ -84,6 +85,7 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 
+  --background-muted: oklch(93.975% 0.03906 62.301);
   --brand: oklch(40.15% 0.11693 23.381);
 }
 

@@ -1,11 +1,58 @@
-import { ArrowLeft } from 'lucide-react'
+import ProjectComponent from '@/components/project'
+import { ArchiveX, ArrowLeft, Folder } from 'lucide-react'
 import { Metadata } from 'next'
 import Link from 'next/link'
-
+import {
+  Empty,
+  EmptyContent,
+  EmptyDescription,
+  EmptyHeader,
+  EmptyMedia,
+  EmptyTitle,
+} from '@/components/ui/empty'
+import { Button } from '@/components/ui/button'
 export const metadata: Metadata = {
   title: 'Projects',
   description: "Projects that I've worked on",
 }
+
+export type ProjectData = {
+  name: string
+  description: string
+  url: string
+  logoURL: string
+}
+
+export const projects: ProjectData[] = [
+  {
+    name: 'Trident',
+    description:
+      'A Minecraft mod made for MCC Island that shows multitude of useful information on-screen and has many QoL improvements',
+    url: 'https://modrinth.com/mod/trident-mcci',
+    logoURL: '/images/trident.png',
+  },
+  {
+    name: 'Trident',
+    description:
+      'A Minecraft mod made for MCC Island that shows multitude of useful information on-screen and has many QoL improvements',
+    url: 'https://modrinth.com/mod/trident-mcci',
+    logoURL: '/images/car.jpg',
+  },
+  {
+    name: 'Trident',
+    description:
+      'A Minecraft mod made for MCC Island that shows multitude of useful information on-screen and has many QoL improvements',
+    url: 'https://modrinth.com/mod/trident-mcci',
+    logoURL: '/images/biomebattle.png',
+  },
+  {
+    name: 'Trident',
+    description:
+      'A Minecraft mod made for MCC Island that shows multitude of useful information on-screen and has many QoL improvements',
+    url: 'https://modrinth.com/mod/trident-mcci',
+    logoURL: '/images/mountains.jpg',
+  },
+]
 
 export default function ProjectsPage() {
   return (
@@ -17,16 +64,43 @@ export default function ProjectsPage() {
           <ArrowLeft className="h-4 w-4" />
           Back
         </Link>
-        <h1 className="mb-4 scroll-m-20 text-brand text-5xl font-fancy tracking-tight text-balance">
+        <h1 className="mb-4 mt-2 scroll-m-20 text-brand text-5xl font-semibold font-sans-heading tracking-tighter">
           Projects
         </h1>
-        <div className="px-0.5">
+        <div className="grid gap-4 px-0.5">
           <p className="leading-5">
             This is a list of project's that I've worked on over the past years.
             This page may include projects that are still being worked on
           </p>
+          <Projects />
         </div>
       </div>
     </div>
+  )
+}
+
+const Projects = async () => {
+  const data = await fetch(
+    'https://uselessfacts.jsph.pl/api/v2/facts/random?language=en'
+  ).then((res) => res.json())
+  return (
+    // <div className="grid gap-2">
+    //   {projects.map((project, index) => (
+    //     <ProjectComponent key={index} project={project} />
+    //   ))}
+    // </div>
+    <Empty className="border rounded-2xl border-dashed border-brand">
+      <EmptyHeader>
+        <EmptyMedia variant="icon">
+          <ArchiveX className="size-10 text-brand" />
+        </EmptyMedia>
+      </EmptyHeader>
+      <EmptyTitle className="text-brand text-xl">
+        This page is being worked on
+      </EmptyTitle>
+      <EmptyDescription className="text-primary/85 leading-5">
+        Random fact: {data?.text ?? 'Useless fact'}
+      </EmptyDescription>
+    </Empty>
   )
 }
