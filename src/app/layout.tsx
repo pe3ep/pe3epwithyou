@@ -1,7 +1,7 @@
-import type { Metadata } from 'next'
-import { Public_Sans, Neuton, Inter, Geist_Mono } from 'next/font/google'
-import './globals.css'
 import Navbar from '@/components/navbar'
+import type { Metadata } from 'next'
+import { Geist_Mono, Inter, Neuton, Public_Sans } from 'next/font/google'
+import './globals.css'
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -30,9 +30,36 @@ export const inter = Inter({
   subsets: ['latin'],
 })
 
+const title = 'pe3epwithyou'
+const description = 'Developer, designer, student'
+
 export const metadata: Metadata = {
-  title: 'pe3epwithyou',
-  description: 'My name is Andrew',
+  title: title,
+  description: description,
+  twitter: {
+    card: 'summary_large_image',
+    title: title,
+    description: description,
+    creator: `@pe3epwithyou`,
+    images: [
+      'https://49e2bk54lp.ufs.sh/f/a93u8F6e4NvWnvLHPwBqmGfErJMPeDqjS0VhXR82Kyiuw3H1',
+    ],
+  },
+  openGraph: {
+    type: 'website',
+    title: title,
+    description: description,
+    url: 'https://pe3epwithyou.vercel.app',
+    siteName: title,
+    images: [
+      {
+        url: 'https://49e2bk54lp.ufs.sh/f/a93u8F6e4NvWnvLHPwBqmGfErJMPeDqjS0VhXR82Kyiuw3H1',
+        width: 1440,
+        height: 900,
+      },
+    ],
+    locale: 'en_US',
+  },
 }
 
 export default function RootLayout({
