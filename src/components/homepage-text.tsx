@@ -66,7 +66,7 @@ export default function HomepageText() {
   )
 }
 
-const InlineLink = ({
+export const InlineLink = ({
   href,
   children,
   cards,
