@@ -41,7 +41,9 @@ export default function Navbar() {
               <Tooltip key={index}>
                 <TooltipTrigger asChild>
                   <Button variant={'secondary'} size={'icon-lg'} asChild>
-                    <a href={item.url}>{item.icon}</a>
+                    <a aria-label={item.name} href={item.url}>
+                      {item.icon}
+                    </a>
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent className="flex items-center gap-1 pr-2.5">

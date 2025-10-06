@@ -56,7 +56,7 @@ export const projects: ProjectData[] = [
 export default function ProjectsPage() {
   return (
     <div className="p-4 pt-20 animate-in fade-in-0 duration-300">
-      <div className="max-w-3xl mx-auto w-full py-4">
+      <main className="max-w-3xl mx-auto w-full py-4">
         <Link
           href="/"
           className="ml-1 text-brand/85 py-1 hover:text-brand font-medium inline-flex items-center gap-1">
@@ -73,7 +73,7 @@ export default function ProjectsPage() {
           </p>
           <EmptyProjects />
         </div>
-      </div>
+      </main>
     </div>
   )
 }
