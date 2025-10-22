@@ -47,26 +47,16 @@ export const AppearVariants = (stagger: number = 0.2) => {
   return data
 }
 
-export default function FloatingCards({
-  cards,
-  stagger = 0.2,
-}: FloatingCardsProps) {
+export default function FloatingCards({ cards, stagger = 0.2 }: FloatingCardsProps) {
   return (
     <motion.div
-      className="relative w-64 h-64"
+      className="relative h-64 w-64"
       variants={AppearVariants(stagger)}
       initial="hidden"
       animate="visible"
       exit="exit">
       {cards.map((card, index) => (
-        <Card
-          key={index}
-          img={card.img}
-          alt={card.alt}
-          index={index}
-          height={card.height}
-          width={card.width}
-        />
+        <Card key={index} img={card.img} alt={card.alt} index={index} height={card.height} width={card.width} />
       ))}
     </motion.div>
   )
@@ -97,7 +87,7 @@ const Card = ({
         rotate: index % 2 ? index * rotation : index * -rotation,
       }}
       variants={AppearVariants()}
-      className="absolute overflow-hidden shadow-xl shadow-stone-950/25 border border-stone-300 outline-[0.5px] outline-stone-900/20">
+      className="absolute overflow-hidden border border-stone-300 shadow-xl shadow-stone-950/25 outline-[0.5px] outline-stone-900/20">
       <img src={img} alt={alt} width={width} height={height} />
     </motion.div>
   )
