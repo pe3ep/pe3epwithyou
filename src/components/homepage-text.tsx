@@ -7,7 +7,7 @@ import { Pointer } from './ui/pointer'
 export default function HomepageText() {
   return (
     <span className="relative z-3 text-center leading-5">
-      <span className="leading-5 [&:not(:first-child)]:mt-6 inline-block">
+      <span className="inline-block leading-5 [&:not(:first-child)]:mt-6">
         I am a{' '}
         <InlineLink
           href="/projects"
@@ -59,8 +59,8 @@ export default function HomepageText() {
           ]}>
           university student
         </InlineLink>
-        . I've been coding ever since I was 11 years old. In my free time, I
-        enjoy self-improvement and working on my passion projects.
+        . I've been coding ever since I was 11 years old. In my free time, I enjoy self-improvement and working on my
+        passion projects.
       </span>
     </span>
   )
@@ -77,9 +77,7 @@ export const InlineLink = ({
 }) => {
   return (
     <span className="relative z-3 inline-block">
-      <Link
-        href={href}
-        className="text-brand font-medium inline-flex items-center gap-0.5">
+      <Link href={href} className="text-brand inline-flex items-center gap-0.5 font-medium">
         {children}
       </Link>
       <Pointer>

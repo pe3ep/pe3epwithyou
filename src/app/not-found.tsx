@@ -6,8 +6,8 @@ import React from 'react'
 export default function FourOhFour() {
   let ref = React.useRef<HTMLDivElement>(null)
   return (
-    <div className="p-4 pt-20 h-screen">
-      <div ref={ref} className="grid place-content-center h-full gap-4">
+    <div className="h-screen p-4 pt-20">
+      <div ref={ref} className="grid h-full place-content-center gap-4">
         <motion.div
           drag
           dragConstraints={ref}
@@ -25,10 +25,8 @@ export default function FourOhFour() {
             scale: 0.95,
             cursor: 'grabbing',
           }}
-          className="hover:cursor-grab grid place-content-center">
-          <h1 className="text-6xl font-sans-heading font-semibold tracking-tighter text-brand">
-            404
-          </h1>
+          className="grid place-content-center hover:cursor-grab">
+          <h1 className="font-sans-heading text-brand text-6xl font-semibold tracking-tighter">404</h1>
         </motion.div>
         <span>
           Page not found,{' '}

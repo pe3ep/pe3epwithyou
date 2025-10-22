@@ -41,9 +41,7 @@ export const metadata: Metadata = {
     title: title,
     description: description,
     creator: `@pe3epwithyou`,
-    images: [
-      'https://49e2bk54lp.ufs.sh/f/a93u8F6e4NvWnvLHPwBqmGfErJMPeDqjS0VhXR82Kyiuw3H1',
-    ],
+    images: ['https://49e2bk54lp.ufs.sh/f/a93u8F6e4NvWnvLHPwBqmGfErJMPeDqjS0VhXR82Kyiuw3H1'],
   },
   openGraph: {
     type: 'website',
@@ -70,7 +68,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${publicSans.variable} ${neuton.variable} ${geistMono.variable} antialiased font-sans selection:bg-brand/20`}>
+        className={`${inter.variable} ${publicSans.variable} ${neuton.variable} ${geistMono.variable} selection:bg-brand/20 font-sans antialiased`}>
         <Navbar />
         {children}
       </body>

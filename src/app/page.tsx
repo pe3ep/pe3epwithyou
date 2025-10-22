@@ -5,28 +5,28 @@ import { motion, Variants } from 'motion/react'
 
 export default function Home() {
   return (
-    <div className="p-4 pt-20 h-screen relative overflow-hidden">
+    <div className="relative h-screen overflow-hidden p-4 pt-20">
       <main className="relative z-20">
-        <div className="w-full p-4 py-16 grid place-content-center gap-8">
+        <div className="grid w-full place-content-center gap-8 p-4 py-16">
           <div className="z-3 grid place-content-center">
             <motion.h2
               variants={delayedVariant()}
               initial="hidden"
               animate="visible"
-              className="scroll-m-20 text-brand text-center text-3xl font-fancy italic tracking-tighter">
+              className="text-brand font-fancy scroll-m-20 text-center text-3xl tracking-tighter italic">
               Hi, my name is
             </motion.h2>
             <motion.h1
               variants={delayedVariant(0.2)}
               initial="hidden"
               animate="visible"
-              className="scroll-m-20 text-brand text-center text-6xl font-semibold font-sans-heading tracking-tighter text-balance">
+              className="text-brand font-sans-heading scroll-m-20 text-center text-6xl font-semibold tracking-tighter text-balance">
               Andrew
             </motion.h1>
           </div>
-          <div className="relative grid place-items-center max-w-xl gap-4 animate-delayed-in">
-            <div className="absolute z-2 -inset-3 bg-background blur-xl" />
-            <div className="absolute z-2 inset-0 bg-background blur-xl" />
+          <div className="animate-delayed-in relative grid max-w-xl place-items-center gap-4">
+            <div className="bg-background absolute -inset-3 z-2 blur-xl" />
+            <div className="bg-background absolute inset-0 z-2 blur-xl" />
             <HomepageText />
           </div>
         </div>
@@ -46,14 +46,14 @@ export default function Home() {
             bounce: 0,
           },
         }}
-        className="fixed z-1 w-full bottom-0 -translate-y-8 sm:translate-y-[50%] left-0 right-0 flex justify-center">
+        className="fixed right-0 bottom-0 left-0 z-1 flex w-full -translate-y-8 justify-center sm:translate-y-[50%]">
         <Globe />
       </motion.footer>
-      <div className="fixed z-2 bottom-0 left-0 right-0 w-full flex justify-center items-center p-3 animate-delayed-in">
-        <div className="relative flex justify-center items-center">
-          <div className="absolute -inset-3 bg-background blur-xl" />
-          <div className="absolute inset-0 bg-background blur-xl" />
-          <p className="relative text-brand text-center">© 2025 Pe3epWithYou</p>
+      <div className="animate-delayed-in fixed right-0 bottom-0 left-0 z-2 flex w-full items-center justify-center p-3">
+        <div className="relative flex items-center justify-center">
+          <div className="bg-background absolute -inset-3 blur-xl" />
+          <div className="bg-background absolute inset-0 blur-xl" />
+          <p className="text-brand relative text-center">© 2025 Pe3epWithYou</p>
         </div>
       </div>
     </div>

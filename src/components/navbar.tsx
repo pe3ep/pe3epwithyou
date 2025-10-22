@@ -32,9 +32,9 @@ const links = [
 
 export default function Navbar() {
   return (
-    <div className="fixed z-50 top-0 w-full p-4">
-      <header className="relative bg-brand text-background p-3 rounded-2xl">
-        <div className="relative w-full flex justify-between items-center">
+    <div className="fixed top-0 z-50 w-full p-4">
+      <header className="bg-brand text-background relative rounded-2xl p-3">
+        <div className="relative flex w-full items-center justify-between">
           <LogoWithHover />
           <div className="flex items-center gap-1">
             {links.map((item, index) => (
