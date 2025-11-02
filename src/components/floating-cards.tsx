@@ -26,6 +26,8 @@ export const AppearVariants = (stagger: number = 0.2) => {
       opacity: 1,
       filter: 'blur(0px)',
       transition: {
+        filter: { type: 'tween', ease: 'easeOut', duration: 0.2, staggerChildren: stagger },
+        opacity: { type: 'tween', ease: 'easeOut', duration: 0.1, staggerChildren: stagger },
         staggerChildren: stagger,
         delayChildren: 0.1,
         type: 'spring',
@@ -87,7 +89,7 @@ const Card = ({
         rotate: index % 2 ? index * rotation : index * -rotation,
       }}
       variants={AppearVariants()}
-      className="absolute overflow-hidden border border-stone-300 shadow-xl shadow-stone-950/25 outline-[0.5px] outline-stone-900/20">
+      className="absolute overflow-hidden border border-neutral-200 shadow-xl shadow-stone-950/25 outline-[0.5px] outline-black/40">
       <img src={img} alt={alt} width={width} height={height} />
     </motion.div>
   )

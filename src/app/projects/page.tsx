@@ -3,18 +3,7 @@ import { Empty, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/
 import { ArchiveX, ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 import useSWR from 'swr'
-
-export type ProjectData = {
-  name: string
-  description: string
-  icon_small: string
-  icon: string
-  link: string
-  screenshots?: {
-    src: string
-    caption: string
-  }[]
-}
+import ProjectGrid, { ProjectData } from './project-grid'
 
 export const projects: ProjectData[] = [
   {
@@ -63,7 +52,8 @@ export default function ProjectsPage() {
             This is a list of project's that I've worked on over the past years. This page may include projects that are
             still being worked on
           </p>
-          <EmptyProjects />
+          {/* <EmptyProjects /> */}
+          <ProjectGrid size={[24, 12]} projects={projects} />
         </div>
       </main>
     </div>

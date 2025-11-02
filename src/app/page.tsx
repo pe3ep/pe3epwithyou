@@ -64,7 +64,7 @@ function delayedVariant(delay: number = 0): Variants {
   return {
     hidden: {
       opacity: 0,
-      filter: 'blur(3px)',
+      filter: 'blur(7px)',
       y: -20,
     },
     visible: {
@@ -72,6 +72,8 @@ function delayedVariant(delay: number = 0): Variants {
       y: 0,
       filter: 'blur(0px)',
       transition: {
+        filter: { type: 'tween', ease: 'easeOut', duration: 0.4, delay: delay },
+        opacity: { type: 'tween', ease: 'easeOut', duration: 0.4, delay: delay },
         delay: delay,
         type: 'spring',
         visualDuration: 0.4,
