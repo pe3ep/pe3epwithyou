@@ -52,8 +52,8 @@ export default function ProjectsPage() {
             This is a list of project's that I've worked on over the past years. This page may include projects that are
             still being worked on
           </p>
-          {/* <EmptyProjects /> */}
-          <ProjectGrid size={[24, 12]} projects={projects} />
+          <EmptyProjects />
+          {/* <ProjectGrid size={[24, 12]} projects={projects} /> */}
         </div>
       </main>
     </div>
@@ -63,7 +63,9 @@ export default function ProjectsPage() {
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
 const EmptyProjects = () => {
-  const { data, error, isLoading } = useSWR('https://uselessfacts.jsph.pl/api/v2/facts/random?language=en', fetcher)
+  const { data, error, isLoading } = useSWR('https://uselessfacts.jsph.pl/api/v2/facts/random?language=en', fetcher, {
+    revalidateOnFocus: false,
+  })
   return (
     <Empty className="border-brand rounded-2xl border border-dashed">
       <EmptyHeader>
