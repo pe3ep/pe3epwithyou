@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Mail } from 'lucide-react'
 import LogoWithHover from './logo-with-hover'
 import { GitHub } from './logos/github'
 import { Instagram } from './logos/instagram'
@@ -8,6 +8,11 @@ import { Button } from './ui/button'
 import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip'
 
 const links = [
+  {
+    url: 'mailto:contact@pe3epwithyou.cc',
+    name: 'Mail',
+    icon: <Mail className="size-5" />,
+  },
   {
     url: 'https://github.com/pe3ep',
     name: 'Github',
