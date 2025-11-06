@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Mail } from 'lucide-react'
 import LogoWithHover from './logo-with-hover'
 import { GitHub } from './logos/github'
 import { Instagram } from './logos/instagram'
@@ -8,6 +8,11 @@ import { Button } from './ui/button'
 import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip'
 
 const links = [
+  {
+    url: 'mailto:contact@pe3epwithyou.cc',
+    name: 'Mail',
+    icon: <Mail className="size-5" />,
+  },
   {
     url: 'https://github.com/pe3ep',
     name: 'Github',
@@ -32,16 +37,18 @@ const links = [
 
 export default function Navbar() {
   return (
-    <div className="fixed z-50 top-0 w-full p-4">
-      <header className="relative bg-brand text-background p-3 rounded-2xl">
-        <div className="relative w-full flex justify-between items-center">
+    <div className="fixed top-0 z-50 w-full p-4">
+      <header className="bg-brand text-background relative rounded-2xl p-3">
+        <div className="relative flex w-full items-center justify-between">
           <LogoWithHover />
           <div className="flex items-center gap-1">
             {links.map((item, index) => (
               <Tooltip key={index}>
                 <TooltipTrigger asChild>
                   <Button variant={'secondary'} size={'icon-lg'} asChild>
-                    <a href={item.url}>{item.icon}</a>
+                    <a aria-label={item.name} href={item.url}>
+                      {item.icon}
+                    </a>
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent className="flex items-center gap-1 pr-2.5">

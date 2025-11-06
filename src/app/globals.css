@@ -87,6 +87,8 @@
 
   --background-muted: oklch(93.975% 0.03906 62.301);
   --brand: oklch(40.15% 0.11693 23.381);
+
+  --projects-grid-cols-large: repeat(24, 1.5rem);
 }
 
 @keyframes delayedFadeIn {
