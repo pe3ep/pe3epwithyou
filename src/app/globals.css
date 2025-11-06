@@ -53,7 +53,6 @@
 :root {
   /* Shadcn defaults */
   --radius: 0.625rem;
-  --background: oklch(97.197% 0.01803 70.126);
   --foreground: oklch(0.145 0 0);
   --card: oklch(97.197% 0.01803 70.126);
   --card-foreground: oklch(0.145 0 0);
@@ -85,6 +84,9 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 
+  --projects-grid-cols-large: repeat(24, 1.5rem);
+
+  --background: oklch(97.197% 0.01803 70.126);
   --background-muted: oklch(93.975% 0.03906 62.301);
   --brand: oklch(40.15% 0.11693 23.381);
 }

@@ -1,11 +1,6 @@
 'use client'
 
-import {
-  AnimatePresence,
-  HTMLMotionProps,
-  motion,
-  useMotionValue,
-} from 'motion/react'
+import { AnimatePresence, HTMLMotionProps, motion, useMotionValue } from 'motion/react'
 import { useEffect, useRef, useState } from 'react'
 
 /**
@@ -16,12 +11,7 @@ import { useEffect, useRef, useState } from 'react'
  * @component
  * @param {HTMLMotionProps<"div">} props - The component props
  */
-export function Pointer({
-  className,
-  style,
-  children,
-  ...props
-}: HTMLMotionProps<'div'>): React.ReactNode {
+export function Pointer({ className, style, children, ...props }: HTMLMotionProps<'div'>): React.ReactNode {
   const x = useMotionValue(0)
   const y = useMotionValue(0)
   const [isActive, setIsActive] = useState<boolean>(false)
@@ -71,7 +61,7 @@ export function Pointer({
       <AnimatePresence>
         {isActive && (
           <motion.div
-            className="hidden sm:block pointer-events-none fixed z-50 transform-[translate(-50%,-50%)] origin-top-left"
+            className="pointer-events-none fixed z-50 hidden origin-top-left transform-[translate(-50%,-50%)] sm:block"
             style={{
               top: y,
               left: x,
