@@ -34,6 +34,11 @@ const nextConfig: NextConfig = {
         destination: 'https://twitch.tv/pe3epwithyou',
         permanent: true,
       },
+      {
+        source: '/discord',
+        destination: 'https://discord.gg/uCGveyFU7d',
+        permanent: true,
+      },
     ]
   },
 }
