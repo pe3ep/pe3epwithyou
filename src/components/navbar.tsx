@@ -4,34 +4,47 @@ import { GitHub } from './logos/github'
 import { Instagram } from './logos/instagram'
 import { Twitch } from './logos/twitch'
 import { Twitter } from './logos/twitter'
+import { Discord } from './logos/discord'
 import { Button } from './ui/button'
 import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip'
+import { it } from 'node:test'
 
 const links = [
   {
     url: 'mailto:contact@pe3epwithyou.cc',
     name: 'Mail',
     icon: <Mail className="size-5" />,
+    hideOnMobile: true,
   },
   {
     url: 'https://github.com/pe3ep',
     name: 'Github',
     icon: <GitHub className="size-5" />,
+    hideOnMobile: false,
+  },
+  {
+    url: 'https://discord.gg/uCGveyFU7d',
+    name: 'Discord',
+    icon: <Discord className="size-5" />,
+    hideOnMobile: false,
   },
   {
     url: 'https://x.com/pe3epwithyou',
     name: 'Twitter',
     icon: <Twitter className="size-5" />,
+    hideOnMobile: false,
   },
   {
     url: 'https://www.instagram.com/pe3epwithyou/',
     name: 'Instagram',
     icon: <Instagram className="size-5" />,
+    hideOnMobile: false,
   },
   {
     url: 'https://twitch.tv/pe3epwithyou',
     name: 'Twitch',
     icon: <Twitch className="size-5" />,
+    hideOnMobile: false,
   },
 ]
 
@@ -43,19 +56,21 @@ export default function Navbar() {
           <LogoWithHover />
           <div className="flex items-center gap-1">
             {links.map((item, index) => (
-              <Tooltip key={index}>
-                <TooltipTrigger asChild>
-                  <Button variant={'secondary'} size={'icon-lg'} asChild>
-                    <a aria-label={item.name} href={item.url}>
-                      {item.icon}
-                    </a>
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent className="flex items-center gap-1 pr-2.5">
-                  <p>{item.name}</p>
-                  <ArrowRight className="h-3 w-3" />
-                </TooltipContent>
-              </Tooltip>
+              <div key={index} className={item.hideOnMobile ? 'hidden sm:block' : ''}>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button variant={'secondary'} size={'icon-lg'} asChild>
+                      <a aria-label={item.name} href={item.url}>
+                        {item.icon}
+                      </a>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent className="flex items-center gap-1 pr-2.5">
+                    <p>{item.name}</p>
+                    <ArrowRight className="h-3 w-3" />
+                  </TooltipContent>
+                </Tooltip>
+              </div>
             ))}
           </div>
         </div>
