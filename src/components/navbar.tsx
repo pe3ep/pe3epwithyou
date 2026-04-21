@@ -50,11 +50,11 @@ const links = [
 
 export default function Navbar() {
   return (
-    <div className="fixed top-0 z-50 w-full p-4">
-      <header className="bg-brand text-background relative rounded-2xl p-3">
+    <div className="fixed top-0 right-0 left-0 z-50 mx-auto w-full max-w-5xl p-4">
+      <header className="bg-brand text-background relative rounded-3xl p-3 pl-4.5">
         <div className="relative flex w-full items-center justify-between">
           <LogoWithHover />
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1.5">
             {links.map((item, index) => (
               <div key={index} className={item.hideOnMobile ? 'hidden sm:block' : ''}>
                 <Tooltip>

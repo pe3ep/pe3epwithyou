@@ -53,7 +53,7 @@ export default function Home() {
         <div className="relative flex items-center justify-center">
           <div className="bg-background absolute -inset-3 blur-xl" />
           <div className="bg-background absolute inset-0 blur-xl" />
-          <p className="text-brand relative text-center">© 2025 Pe3epWithYou</p>
+          <p className="text-brand relative text-center">© 2025-2026 Pe3epWithYou</p>
         </div>
       </div>
     </div>
